@@ -42,45 +42,56 @@ class DurationComplexityBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Row(
-          children: [
-            Icon(
-              Icons.schedule,
-            ),
-            SizedBox(
-              width: 6,
-            ),
-            Text("$duration min", style: TextStyle(fontSize: 20)),
-          ],
-        ),
-        Row(
-          children: [
-            Icon(
-              Icons.work,
-            ),
-            SizedBox(
-              width: 6,
-            ),
-            Text("$complexityText",
-                style: TextStyle(fontSize: 20, fontFamily: "Roboto")),
-          ],
-        ),
-        Row(
-          children: [
-            Icon(
-              Icons.attach_money,
-            ),
-            SizedBox(
-              width: 6,
-            ),
-            Text("$affordabilityText",
-                style: TextStyle(fontSize: 20, fontFamily: "Roboto")),
-          ],
-        ),
-      ],
+    return Container(
+      height: 20,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Row(
+            children: [
+              Icon(
+                Icons.schedule,
+              ),
+              SizedBox(
+                width: 6,
+              ),
+              FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child:
+                      Text("$duration min ", style: TextStyle(fontSize: 20))),
+            ],
+          ),
+          Row(
+            children: [
+              Icon(
+                Icons.work,
+              ),
+              SizedBox(
+                width: 6,
+              ),
+              FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Text("$complexityText ",
+                      style: TextStyle(fontFamily: "Roboto", fontSize: 18))),
+            ],
+          ),
+          Row(
+            children: [
+              Icon(
+                Icons.attach_money,
+              ),
+              SizedBox(
+                width: 6,
+              ),
+              FittedBox(
+                fit: BoxFit.fitWidth,
+                child: Text("$affordabilityText ",
+                    style: TextStyle(fontFamily: "Roboto", fontSize: 18)),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
